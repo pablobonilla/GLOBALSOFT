@@ -15,6 +15,7 @@ return new class extends Migration
             $table->engine = "InnoDB";
 
             $table->bigIncrements('id');
+            $table->bigInteger('category_id')->unsigned();
             $table->string('description');
             $table->string('description_large')->nullable()->default('NULL');
             $table->integer('qty')->default(0);
