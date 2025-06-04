@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\Categoria;
 use App\Models\Discount;
 use App\Models\Product;
 use App\Models\Tax;
@@ -49,15 +49,15 @@ class ProductController extends Controller
      */
     public function create()
     {
-        /*$categorias = Category::all()->where('is_activated', 1);
-        $discounts = Discount::all()->where('is_activated', 1);
-        $taxes = Tax::all()->where('is_activated', 1);
+        $categorias = Categoria::all()->where('is_activated', 1);
+        // $discounts = Discount::all()->where('is_activated', 1);
+        // $taxes = Tax::all()->where('is_activated', 1);
 
         return view('product.create', [
             "categorias" => $categorias,
-            "discounts" => $discounts,
-            "taxes" => $taxes
-        ]);*/
+            // "discounts" => $discounts,
+            // "taxes" => $taxes
+        ]);
 
         return view('product.create');
     }
@@ -72,9 +72,9 @@ class ProductController extends Controller
     {
         return view('product.edit', [
             'producto' => Product::find($id),
-            'categorias' => Category::all()->where('is_activated', 1),
-            "discounts" => Discount::all()->where('is_activated', 1),
-            "taxes" => Tax::all()->where('is_activated', 1),
+            'categorias' => Categoria::all()->where('is_activated', 1),
+            // "discounts" => Discount::all()->where('is_activated', 1),
+            // "taxes" => Tax::all()->where('is_activated', 1),
             'productos' => Product::all()->where('is_activated', 1),
             'guarniciones' => DB::table('garrison')
                 ->where('garrison.product_id', $id)

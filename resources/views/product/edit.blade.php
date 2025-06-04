@@ -28,9 +28,9 @@
                                     <div class="form-group">
                                         <label for="category_id">{{ __('Categorías') }} <span style="color: red;">*</span></label>
                                         <select class="form-control select2" name="category_id" id="category_id" style="width: 100%;">
-{{--                                            @foreach($categorias as $categoria)--}}
-{{--                                                <option value="{{$categoria->id}}" @if($producto->category_id== $categoria->id) selected="selected"@endif>{{$categoria->description}}</option>--}}
-{{--                                            @endforeach--}}
+                                            @foreach($categorias as $categoria)
+                                                <option value="{{$categoria->id}}" @if($producto->category_id== $categoria->id) selected="selected"@endif>{{$categoria->description}}</option>
+                                            @endforeach
                                         </select>
                                         @error('category_id') <span class="error text-danger">{{ __($message) }}</span> @enderror
                                     </div>

@@ -11,25 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('product', function (Blueprint $table) {
+        Schema::create('category', function (Blueprint $table) {
             $table->engine = "InnoDB";
 
             $table->bigIncrements('id');
             $table->string('description');
-            $table->string('description_large')->nullable()->default('NULL');
-            $table->integer('qty')->default(0);
-            $table->decimal('price', 18, 9)->default(0);
-            $table->bigInteger('tax_id')->unsigned();
-            $table->bigInteger('discount_id')->unsigned();
-            $table->string('reference')->nullable()->default('NULL');
-            $table->tinyInteger('configurable_product')->default(0);
-            $table->string('photo')->nullable()->default('NULL');
             $table->tinyInteger('is_activated')->default(1);
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();
             $table->timestamps();
-
-            $table->foreign('category_id')->references("id")->on("category");
         });
     }
 
@@ -38,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::drop('product');
+        Schema::drop('category');
     }
 };

@@ -27,9 +27,9 @@
                                         <label for="category_id">{{ __('Categorías') }} <span style="color: red;">*</span></label>
                                         <select class="form-control select2" name="category_id" id="category_id" style="width: 100%;">
                                             <option value="" selected>{{ __('Seleccionar categoría') }}</option>
-{{--                                            @foreach ($categorias as $categoria)--}}
-{{--                                                <option value="{{ $categoria->id }}" @if($categoria->category_id == old('category_id')) selected="selected"@endif>{{ $categoria->description }}</option>--}}
-{{--                                            @endforeach;--}}
+                                            @foreach ($categorias as $categoria)
+                                                <option value="{{ $categoria->id }}" @if($categoria->category_id == old('category_id')) @endif>{{ $categoria->description }}</option>
+                                            @endforeach;
                                         </select>
                                         @error('category_id') <span class="error text-danger">{{ __($message) }}</span> @enderror
                                     </div>

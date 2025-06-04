@@ -30,3 +30,5 @@ Route::get('/inventarioFisico/', [App\Http\Controllers\ProductController::class,
 Route::get('/producto/getQtyByProduct/{id}', [App\Http\Controllers\ProductController::class, 'getQtyByProduct'])->middleware('auth')->name('producto.getQtyByProduct');
 Route::post('/producto/savePhisicalInventory/', [App\Http\Controllers\ProductController::class, 'savePhisicalInventory'])->middleware('auth')->name('producto.savePhisicalInventory');
 //Route::get('/search/', [App\Http\Controllers\ProductController::class, 'search'])->middleware('auth')->name('producto.search');
+
+Route::resource('/categorias', App\Http\Controllers\CategoriasController::class)->middleware('auth');
